@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+ 
+    <hibernate-mapping package="cn.itcast.erp.pojo">
+    
+    	<class name="User" table="USER_P" schema="xt">
+    	
+    		<id name="id" column="USER_ID">
+    			<generator class="assigned"/>
+    		</id>
+    		<property name="userName" column="USER_NAME"/>
+    		<property name="password" column="PASSWORD"/>
+    		<property name="state" column="state"/>
+    		
+    		<property name="createBy" column="CREATE_BY"/>
+    		<property name="createDept" column="CREATE_DEPT"/>
+    		<property name="createTime" column="CREATE_TIME"/>
+    		<property name="updateBy" column="UPDATE_BY"/>
+    		<property name="updateTime" column="UPDATA_TIME"/>
+    		
+    	
+    	
+    	<many-to-one name="dept" class="Dept" column="DEPT_ID"></many-to-one>
+    	
+    	<one-to-one name="userInfo" class="UserInfo" cascade="all"></one-to-one>
+    	
+    	<set name="roles" table="ROLE_USER_P" schema="xt">
+    		<key column="USER_ID"></key>
+    		<many-to-many class="Role" column="ROLE_ID"></many-to-many>
+    	
+    	</set>
+    	</class>
+    
+    
+    </hibernate-mapping>
+    
+    	
