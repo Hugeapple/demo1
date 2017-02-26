@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.Hibernate;
 
 import cn.itcast.erp.common.SysConstant;
@@ -55,7 +56,12 @@ public class LoginAction extends BaseAction {
 		return SUCCESS;
 		
 	}
-	
+	public String logout() throws Exception{
+//		ServletActionContext.getRequest().getSession().invalidate();
+		SecurityUtils.getSubject().logout();
+		return "loginOut";
+		
+	}
 	
 
 	public String getUsername() {

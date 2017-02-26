@@ -20,6 +20,15 @@
 		<mapping resource="cn/itcast/erp/pojo/Role.hbm.xml"/>
 		<mapping resource="cn/itcast/erp/pojo/Module.hbm.xml"/>
 		
+		
+		<mapping resource="cn/itcast/erp/pojo/Contract.hbm.xml"/>
+		<mapping resource="cn/itcast/erp/pojo/ContractProduct.hbm.xml"/>
+		<mapping resource="cn/itcast/erp/pojo/ExtCproduct.hbm.xml"/>
+		<mapping resource="cn/itcast/erp/pojo/Factory.hbm.xml"/>
+		
+		
+		
+		
 	</session-factory>
 </hibernate-configuration>
 

@@ -149,6 +149,7 @@ public class Module extends BaseEntity{
 				+ cwhich + ", quoteNum=" + quoteNum + ", remark=" + remark
 				+ ", orderNo=" + orderNo + "]";
 	}
+	
 
 	
 }

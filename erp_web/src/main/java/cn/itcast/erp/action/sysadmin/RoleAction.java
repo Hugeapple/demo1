@@ -183,7 +183,7 @@ public class RoleAction extends BaseAction implements ModelDriven<Role>{
 	
 	public String module() throws Exception{
 			
-		String[] ids = moduleIds.split(",");
+		String[] ids = moduleIds.split(", ");
 		
 		Role role = roleService.get(Role.class, model.getId());
 		

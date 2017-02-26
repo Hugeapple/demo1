@@ -175,7 +175,9 @@
 		});
 		
 		function logout(){
-			return formSubmit("${ctx}/logout", "_top");
+			<%-- <%session.invalidate(); %> --%>// 销毁session
+			alert("saaaaaaaaaaaaaa");
+	 		return formSubmit("${pageContext.request.contextPath}/logout", "_top"); 
 		}
 		
 		function toModule(moduleName){

@@ -54,8 +54,8 @@
 <li id="update"><a href="#" onclick="javascript:toUpdate()">修改</a></li>
 <li id="delete"><a href="#" onclick="formSubmit('deptAction_delete','_self');this.blur();">删除</a></li>
 </ul> -->
-<%-- 	<%@ include file="../../upmenu.jsp" %> --%>
-<jsp:include page="../../upmenu.jsp"></jsp:include>
+	<%@ include file="../../upmenu.jsp" %>
+<%-- <jsp:include page="../../upmenu.jsp"></jsp:include> --%>
 
   </div>
 </div>

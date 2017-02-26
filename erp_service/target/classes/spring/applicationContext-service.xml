@@ -33,4 +33,23 @@
 	<bean id="moduleService" class="cn.itcast.erp.service.impl.ModuleServiceImpl">
 		<property name="baseDao" ref="baseDao"></property>
 	</bean>
+	
+	
+	
+	<!--购销合同  -->
+	<bean id="contractService" class="cn.itcast.erp.service.impl.ContractServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="contractProductService" class="cn.itcast.erp.service.impl.ContractProductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="extCproductService" class="cn.itcast.erp.service.impl.ExtCproductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="factoryService" class="cn.itcast.erp.service.impl.FactoryServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
 </beans>

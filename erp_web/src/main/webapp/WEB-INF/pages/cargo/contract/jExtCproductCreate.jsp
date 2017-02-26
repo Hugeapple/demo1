@@ -30,7 +30,7 @@
   </div>
 </div>
 </div>
-</div>
+</div>	
    
   <div class="textbox-title">
 	<img src="${ctx }/skin/default/images/icon/currency_yen.png"/>
@@ -48,7 +48,7 @@
 	            				onchange="setFactoryName(this.options[this.selectedIndex].text);"
 	            				listKey="id" listValue="factoryName" 
 	            				headerKey="" headerValue="--请选择--"/>
-	            	<input type="hidden" id="factoryName" name="factoryName" value=""/>
+	            	<input type="hidden" id="factoryName" name="factoryName" value="" id="asd"/>
 	            </td>
 	            <td class="columnTitle">货号：</td>
 	            <td class="tableContentAuto"><input type="text" name="productNo" value=""/></td>

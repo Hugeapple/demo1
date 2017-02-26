@@ -22,10 +22,9 @@
   <div id="navMenubar">
 <ul>
 <li id="save"><a href="#" onclick="formSubmit('contractProductAction_insert','_self');this.blur();">保存</a></li>
-<li id="back"><a href="#" onclick="history.go(-1);">返回</a></li>
+<li id="back"><a href="#" onclick="formSubmit('contractAction_list?moduleName=cargo','_self');this.blur();">返回</a></li>
 </ul>
   </div>
-</div>
 </div>
 </div>
    

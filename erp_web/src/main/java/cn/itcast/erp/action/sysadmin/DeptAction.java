@@ -125,7 +125,7 @@ public class DeptAction extends BaseAction implements ModelDriven<Dept>{
 		 deptService.saveOrUpdate(model);
 		
 		
-		return SUCCESS;
+		return list();
 	}
 	public String delete() throws Exception{
 		Object object = ActionContext.getContext().getSession().get(model);

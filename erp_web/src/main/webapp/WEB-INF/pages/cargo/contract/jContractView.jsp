@@ -1,6 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ include file="../../base.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<title></title>
@@ -78,7 +79,8 @@
 	        </tr>		
 	        <tr>
 	            <td class="columnTitle">要求：</td>
-	            <td class="tableContent"><pre>${crequest }</pre></td>
+	            <<%-- td class="tableContent"><pre>${fn:replace(crequest,'\\r\\n','<br>') }</pre></td> --%>
+	            <td class="tableContent"><pre>${crequest}</pre></td>
 	            <td class="columnTitle">说明：</td>
 	            <td class="tableContent"><pre>${remark }</pre></td>
 	        </tr>		

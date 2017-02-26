@@ -9,8 +9,24 @@
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<!-- 船运模块 -->
 	<package name="cargo" namespace="/cargo" extends="struts-default">
-
+		<action name="contractAction_*" method="{1}" class="contractAction">
+			<result name="list">/WEB-INF/pages/cargo/contract/jContractList.jsp</result>
+			<result name="toView">/WEB-INF/pages/cargo/contract/jContractView.jsp</result>
+			<result name="toCreate">/WEB-INF/pages/cargo/contract/jContractCreate.jsp</result>
+			<result name="success" type="redirectAction">contractAction_list</result>
+			<result name="toUpdate">/WEB-INF/pages/cargo/contract/jContractUpdate.jsp</result>
+		</action>
+		<action name="contractProductAction_*" method="{1}" class="contractProductAction">
+			<result name="toCreate">/WEB-INF/pages/cargo/contract/jContractProductCreate.jsp</result>
+			<result name="toUpdate">/WEB-INF/pages/cargo/contract/jContractProductUpdate.jsp</result>
+			<result name="success" type="redirectAction">contractProductAction_tocreate?contract.id=${model.getContract().getId()}</result>
+		</action>
 		
+		<action name="extCproductAction_*" method="{1}" class="extCproductAction">
+			<result name="toCreate">/WEB-INF/pages/cargo/contract/jExtCproductCreate.jsp</result>
+			<result name="toUpdate">/WEB-INF/pages/cargo/contract/jExtCproductUpdate.jsp</result>
+			<result name="success" type="redirectAction">contractProductAction_tocreate?contract.id=${model.getContract().getId()}</result>
+		</action>
 		
 	</package>
 </struts>
