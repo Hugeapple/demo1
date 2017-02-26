@@ -28,5 +28,15 @@
 			<result name="success" type="redirectAction">contractProductAction_tocreate?contract.id=${model.getContract().getId()}</result>
 		</action>
 		
+		<action name="outProductAction_*" method="{1}" class="outProductAction">
+		
+		<result name="toedit">/WEB-INF/pages/cargo/outproduct/jOutProduct.jsp</result>
+		
+		</action>
+		
+		
+		
+		
+		
 	</package>
 </struts>

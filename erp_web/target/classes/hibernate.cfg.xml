@@ -27,6 +27,11 @@
 		<mapping resource="cn/itcast/erp/pojo/Factory.hbm.xml"/>
 		
 		
+		<mapping resource="cn/itcast/erp/pojo/Export.hbm.xml"/>
+		<mapping resource="cn/itcast/erp/pojo/ExportProduct.hbm.xml"/>
+		<mapping resource="cn/itcast/erp/pojo/ExtEproduct.hbm.xml"/>
+		
+		
 		
 		
 	</session-factory>

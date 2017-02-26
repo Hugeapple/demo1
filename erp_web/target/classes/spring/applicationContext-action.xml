@@ -64,6 +64,10 @@
 		<property name="factoryService" ref="factoryService"></property>
 	</bean>
 	
+	<bean id="outProductAction" class="cn.itcast.erp.action.cargo.OutProductAction" scope="prototype">
+		<property name="contractProductService" ref="contractProductService"></property>
+	</bean>
+	
 	
 	
 	
