@@ -1,0 +1,5 @@
+mail.smtp.host=smtp.163.com
+mail.username=13122680069
+mail.password=xt1085388230
+mail.smtp.auth=true
+mail.from=13122680069@163.com
