@@ -13,8 +13,7 @@
 		${mRecordData}
 		//发送ajax请求-------------返回json------------后面就去组织数据（调用函数）
 		//当进入更新页面时-----------直接获取服务器返回的串
-		
-		
+		//addTRRecord("mRecordTable", "id", "productNo", "cnumber", "grossWeight", "netWeight", "sizeLength", "sizeWidth", "sizeHeight", "exPrice", "tax");
     });
     
 
@@ -22,7 +21,8 @@
 	function sortnoTR(){
 		sortno('mRecordTable', 2, 1);
 	}
-		
+	//第一个参数：表格的id，未来要对id=objId这个表格对象添加tr	
+	//id:这条记录的主键
 	function addTRRecord(objId, id, productNo, cnumber, grossWeight, netWeight, sizeLength, sizeWidth, sizeHeight, exPrice, tax) {
 		
 		var _tmpSelect = "";
@@ -43,29 +43,40 @@
 		oTD = oTR.insertCell(2);
 		oTD.innerHTML = "<input class=\"input\" type=\"text\" name=\"mr_orderNo\" readonly size=\"3\" value=\"\">";
 		oTD = oTR.insertCell(3);
-		oTD.innerHTML = "<b><font face='微软雅黑'><font color='blue'>"+productNo;+"</font></font></b> "
+		oTD.innerHTML = "<b><font face='微软雅黑' color='blue'>"+productNo+"</font></b> "
 		oTD = oTR.insertCell(4);
-		oTD.innerHTML = "<input type=\"text\" name=\"mr_cnumber\" maxLength=\"10\" value=\""+cnumber+"\" onBlur=\"setTRUpdateFlag(this);\" size=\"15\">";
+		oTD.innerHTML = "<input type=\"text\" name=\"mr_cnumber\" maxLength=\"10\" value=\""+cnumber+"\" onblur=\"mychange(this);\" size=\"15\">";
 		oTD = oTR.insertCell(5);
-		oTD.innerHTML = "<input type=\"text\" name=\"mr_grossWeight\" maxLength=\"10\" value=\""+grossWeight+"\" onBlur=\"setTRUpdateFlag(this);\" size=\"15\">";
+		oTD.innerHTML = "<input type=\"text\" name=\"mr_grossWeight\" maxLength=\"10\" value=\""+grossWeight+"\" onchange=\"mychange(this);\" size=\"15\">";
 		oTD = oTR.insertCell(6);
-		oTD.innerHTML = "<input type=\"text\" name=\"mr_netWeight\" maxLength=\"10\" value=\""+netWeight+"\" onBlur=\"setTRUpdateFlag(this);\" size=\"15\">";
+		oTD.innerHTML = "<input type=\"text\" name=\"mr_netWeight\" maxLength=\"10\" value=\""+netWeight+"\" onchange=\"mychange(this);\" size=\"15\">";
 		oTD = oTR.insertCell(7);
-		oTD.innerHTML = "<input type=\"text\" name=\"mr_sizeLength\" maxLength=\"10\" value=\""+sizeLength+"\" onBlur=\"setTRUpdateFlag(this);\" size=\"15\">";
+		oTD.innerHTML = "<input type=\"text\" name=\"mr_sizeLength\" maxLength=\"10\" value=\""+sizeLength+"\" onchange=\"mychange(this);\" size=\"15\">";
 		oTD = oTR.insertCell(8);
-		oTD.innerHTML = "<input type=\"text\" name=\"mr_sizeWidth\" maxLength=\"10\" value=\""+sizeWidth+"\" onBlur=\"setTRUpdateFlag(this);\" size=\"15\">";
+		oTD.innerHTML = "<input type=\"text\" name=\"mr_sizeWidth\" maxLength=\"10\" value=\""+sizeWidth+"\" onchange=\"mychange(this);\" size=\"15\">";
 		oTD = oTR.insertCell(9);
-		oTD.innerHTML = "<input type=\"text\" name=\"mr_sizeHeight\" maxLength=\"10\" value=\""+sizeHeight+"\" onBlur=\"setTRUpdateFlag(this);\" size=\"15\">";
+		oTD.innerHTML = "<input type=\"text\" name=\"mr_sizeHeight\" maxLength=\"10\" value=\""+sizeHeight+"\" onchange=\"mychange(this);\" size=\"15\">";
 		oTD = oTR.insertCell(10);
-		oTD.innerHTML = "<input type=\"text\" name=\"mr_exPrice\" maxLength=\"10\" value=\""+exPrice+"\" onBlur=\"setTRUpdateFlag(this);\" size=\"15\">";
+		oTD.innerHTML = "<input type=\"text\" name=\"mr_exPrice\" maxLength=\"10\" value=\""+exPrice+"\" onchange=\"mychange(this);\" size=\"15\">";
 		oTD = oTR.insertCell(11);
-		oTD.innerHTML = "<input type=\"text\" name=\"mr_tax\" maxLength=\"10\" value=\""+tax+"\" onBlur=\"setTRUpdateFlag(this);\" size=\"15\">";
+		oTD.innerHTML = "<input type=\"text\" name=\"mr_tax\" maxLength=\"10\" value=\""+tax+"\" onchange=\"mychange(this);\" size=\"15\">";
 
 		dragtableinit();	//拖动表格行
 		sortnoTR();			//排序号
 		
 	}    
     
+	//obj当前的文本框
+	function mychange(obj){
+		//获取当前的tr
+		var tr = obj.parentElement.parentElement;
+		//获取当前tr中的
+		if(obj.value!=obj.defaultValue){
+			tr.getElementsByTagName("input")[2].value="1";
+		}
+	}
+	
+	
 </script> 
 
 </head>
@@ -153,6 +164,28 @@
 				<td>出口单价</td>
 				<td>含税</td>
 			</tr>
+			
+			<%-- <c:forEach items="${exportProducts }" var="ep" varStatus="status">
+				<td width="25">
+				</td>
+				<td width="20">
+				</td>
+				<td width="33">${status.index }</td>
+				<td><input type="text" value="${ep.productNo }" name="productNo" ></td>
+				<td><input type="text" value="${ep.productNo }" name="productNo" ></td>
+				<td><input type="text" value="${ep.productNo }" name="productNo" ></td>
+				<td><input type="text" value="${ep.productNo }" name="productNo" ></td>
+				<td>长</td>
+				<td>宽</td>
+				<td>高</td>
+				<td>出口单价</td>
+				<td>含税</td>
+				
+			
+			</c:forEach>
+			 --%>
+			
+			
 		</table>
 	</div>
 

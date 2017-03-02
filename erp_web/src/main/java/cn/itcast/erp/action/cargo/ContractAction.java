@@ -3,6 +3,10 @@ package cn.itcast.erp.action.cargo;
 import java.util.List;
 import java.util.Set;
 
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -12,6 +16,7 @@ import cn.itcast.erp.pojo.Contract;
 import cn.itcast.erp.pojo.Module;
 import cn.itcast.erp.pojo.Role;
 import cn.itcast.erp.pojo.User;
+import cn.itcast.erp.print.ContractPrint;
 import cn.itcast.erp.service.ContractService;
 import cn.itcast.erp.service.ModuleService;
 import cn.itcast.erp.service.RoleService;
@@ -102,7 +107,21 @@ public class ContractAction extends BaseAction implements ModelDriven<Contract>{
 		return "toView";
 	}
 	
-	
+	public String print() throws Exception {
+		//获取当前的购销合同
+		Contract contract = contractService.get(Contract.class, model.getId());
+		//获取path
+		String path = ServletActionContext.getRequest().getRealPath("/");
+		//获取response
+		HttpServletResponse response = ServletActionContext.getResponse();
+		//穿件ContractPrint对象
+		ContractPrint cp = new ContractPrint();
+		//打印
+		cp.print(contract, path, response);
+		
+		return NONE;
+	}
+
 	
 	
 	

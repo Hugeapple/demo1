@@ -29,13 +29,18 @@
 		</action>
 		
 		<action name="outProductAction_*" method="{1}" class="outProductAction">
-		
 		<result name="toedit">/WEB-INF/pages/cargo/outproduct/jOutProduct.jsp</result>
-		
 		</action>
 		
-		
-		
+		<!--exportAction  -->
+		<action name="exportAction_*" method="{1}" class="exportAction">
+			<result name="list">/WEB-INF/pages/cargo/export/jExportList.jsp</result>
+			<result name="toView">/WEB-INF/pages/cargo/export/jExportView.jsp</result>
+			<result name="toCreate">/WEB-INF/pages/cargo/export/jExportCreate.jsp</result>
+			<result name="success" type="redirectAction">exportAction_list</result>
+			<result name="toUpdate">/WEB-INF/pages/cargo/export/jExportUpdate.jsp</result>
+			<result name="contractList">/WEB-INF/pages/cargo/export/jContractList.jsp</result>
+		</action>
 		
 		
 	</package>

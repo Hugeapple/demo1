@@ -52,4 +52,18 @@
 	<bean id="factoryService" class="cn.itcast.erp.service.impl.FactoryServiceImpl">
 		<property name="baseDao" ref="baseDao"></property>
 	</bean>
+	
+	
+	<!--报运  -->
+	<bean id="exportService" class="cn.itcast.erp.service.impl.ExportServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="exportProductService" class="cn.itcast.erp.service.impl.ExportProductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
+	
+	<bean id="extEproductService" class="cn.itcast.erp.service.impl.ExtEproductServiceImpl">
+		<property name="baseDao" ref="baseDao"></property>
+	</bean>
 </beans>

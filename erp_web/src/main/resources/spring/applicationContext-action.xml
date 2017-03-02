@@ -68,6 +68,16 @@
 		<property name="contractProductService" ref="contractProductService"></property>
 	</bean>
 	
+	<bean id="exportAction" class="cn.itcast.erp.action.cargo.ExportAction" scope="prototype">
+		<property name="exportService" ref="exportService"></property>
+		<property name="contractService" ref="contractService"></property>
+		<property name="exportProductService" ref="exportProductService"></property>
+	</bean>
+	
+	<!--stat  -->
+	<bean id="statChartAction" class="cn.itcast.erp.action.stat.StatChartAction" scope="prototype">
+		<property name="sqlDao" ref="sqlDao"></property>
+	</bean>
 	
 	
 	

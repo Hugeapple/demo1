@@ -60,6 +60,7 @@
 	<import resource="classpath:spring/applicationContext-action.xml"/>
 	<import resource="classpath:spring/applicationContext-shiro.xml"/>
 	<import resource="classpath:spring/applicationContext-mail.xml"/>
+	<import resource="classpath:spring/applicationContext-job.xml"/>
 	
 	
 	

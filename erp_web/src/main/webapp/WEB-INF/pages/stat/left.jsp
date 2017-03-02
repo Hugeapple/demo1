@@ -39,6 +39,7 @@
 				<li><a href="${ctx}/stat/statChartAction_onlineInfo" onclick="linkHighlighted(this)" target="main" id="aa_1">系统访问压力图</a></li>					
 			</ul> --%>
 			 <%@include file="../leftmenu.jsp" %> 
+			 <li><a href="${ctx}/stat/statChartAction_productsaleJson" onclick="linkHighlighted(this)" target="main" id="aa_1">产品销售排行图</a></li>			
         </div>
     </div>
     </div>
