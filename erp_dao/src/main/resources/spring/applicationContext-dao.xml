@@ -21,14 +21,8 @@
 	</bean>
 	
 	<bean id="sqlDao" class="cn.itcast.erp.dao.common.SqlDao">
-	
-	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
 	</bean>
-	
-	
-	
-	
-	
 	
 	
 	<bean id="baseDao" class="cn.itcast.dao.impl.BaseDaoImpl">
